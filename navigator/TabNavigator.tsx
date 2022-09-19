@@ -5,7 +5,7 @@ import OrdersScreen from '../screens/OrdersScreen';
 import {useNavigation} from '@react-navigation/native';
 import React, {useLayoutEffect} from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { Entypo } from '@expo/vector-icons'; 
+import { Entypo } from '@expo/vector-icons';
 
 
 export type TabStackParamList = {
@@ -49,7 +49,6 @@ useLayoutEffect(() => {
     </Tab.Navigator>
   )
 }
-
 
 
 
