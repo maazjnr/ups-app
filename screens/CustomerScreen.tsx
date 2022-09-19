@@ -3,7 +3,7 @@ import {useNavigation, CompositeNavigationProp} from '@react-navigation/native';
 import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 import { TabStackParamList } from '../navigator/TabNavigator';
 import { useTailwind } from 'tailwind-rn/dist'
-import React, {useLayoutEffect, useState} from 'react';
+import React, {useLayoutEffect, useState} from 'react'
 
 
 export type CustomerScreenNavigationProp = CompositeNavigationProp<
