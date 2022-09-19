@@ -8,10 +8,10 @@ type Order {
   lat: Float
   lng: Float
   trackingItems: TrackingItems
-  @materializer {
-    name: "getTrackingItemById"
-    argument: [{name: "id", field: "trackingId"}]
-  }
+  @materializer(
+    query: "getTrackingItemById"
+    arguments: [{name: "id", field: "trackingId"}]
+  )
 
 }
 
@@ -20,8 +20,15 @@ type OrderList {
   value: Order
 }
 type Query {
+
+  getOrdersById(id: ID): Order
+  @rest(
+    endpoint: "https://ups-clone-25cb4-default-rtdb.firebaseio.com/orders/@id.json"
+  )
+  
   getOrders: [OrderList]
     @rest(
       endpoint: "https://ups-clone-25cb4-default-rtdb.firebaseio.com/orders.json"
+      transforms: [{pathpattern: [], editor: "objectToArray"}]
     )
 }

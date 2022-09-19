@@ -4,14 +4,26 @@ type ItemsEntry {
   price: Float
   quantity: Int
 }
+
+type TrackingItemsList {
+  customer_id: String
+  value: TrackingItems
+}
+
 type TrackingItems {
   customer_id: String
-  items: [Items]
+  # items: [Items]
 }
 
 type Query {
   getTrackingItemById(id: ID!): TrackingItems
     @rest(
       endpoint: "https://ups-clone-25cb4-default-rtdb.firebaseio.com/trackingItems/$Iid.json"
+    )
+
+    getTrackingItem: [TrackingItemsList]
+    @rest(
+      endpoint: "https://ups-clone-25cb4-default-rtdb.firebaseio.com/trackingItems.json"
+      transforms: [{pathpattern: [], editor: "objectToArray"}]
     )
 }
