@@ -5,8 +5,8 @@ type Order {
   trackingId: String
   address: String
   city: String
-  lat: number
-  lng: number
+  lat: Float
+  lng:String
   trackingItems: TrackingItems
   @materializer(
     query: "getTrackingItemById"
@@ -23,7 +23,7 @@ type Query {
 
   getOrdersById(id: ID): Order
   @rest(
-    endpoint: "https://ups-clone-25cb4-default-rtdb.firebaseio.com/orders/@id.json"
+    endpoint: "https://ups-clone-25cb4-default-rtdb.firebaseio.com/orders/$id.json"
   )
   
   getOrders: [OrderList]

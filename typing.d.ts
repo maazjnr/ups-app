@@ -9,14 +9,25 @@ type CustomerList = {
 }
 
 type Item = {
-    item_id: 10;
+    item_id: ID;
     name: string
     price: number
     quantity: number
 }
 
+type TrackingItem = {
+    customer_id: ID;
+    Customer: Customer;
+    items: Item[]
+}
+
 type OrderResponse = {
     value: Order
+}
+
+type CustomerResponse = {
+    name: ID;
+    value: Customer;
 }
 
 type Order = {
@@ -26,7 +37,7 @@ type Order = {
     trackingId: String
     Address: String
     City: String
-    Lat: Number
-    Lng: Number
+    Lat: number
+    Lng: number
     trackingItems: TrackingItems
 }

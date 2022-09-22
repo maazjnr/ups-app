@@ -24,14 +24,14 @@ const useCustomerOrders = (userId: string) => {
             Lng: value.Lng
         }));
 
-  }, [data])
+        const customerOrders = orders.filter(order => 
+          order.trackingItems.customer_id === userId);
+        
+        setOrders(customerOrders)
 
-  
-  return (
-    <View>
-      <Text>useCustomerOrders</Text>
-    </View>
-  )
+  }, [data, userId])
+
+  return {loading, error, orders};
 }
 
 export default useCustomerOrders
