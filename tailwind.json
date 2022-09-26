@@ -19,6 +19,26 @@
 			"position": "relative"
 		}
 	},
+	"ml-2": {
+		"style": {
+			"marginLeft": 8
+		}
+	},
+	"mr-2": {
+		"style": {
+			"marginRight": 8
+		}
+	},
+	"mb-2": {
+		"style": {
+			"marginBottom": 8
+		}
+	},
+	"mt-2": {
+		"style": {
+			"marginTop": 8
+		}
+	},
 	"block": {
 		"style": {
 			"display": "block"
@@ -32,6 +52,11 @@
 	"flex": {
 		"style": {
 			"display": "flex"
+		}
+	},
+	"table": {
+		"style": {
+			"display": "table"
 		}
 	},
 	"hidden": {
@@ -63,6 +88,14 @@
 			"backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))"
 		}
 	},
+	"p-5": {
+		"style": {
+			"paddingTop": 20,
+			"paddingRight": 20,
+			"paddingBottom": 20,
+			"paddingLeft": 20
+		}
+	},
 	"px-10": {
 		"style": {
 			"paddingLeft": 40,
@@ -87,6 +120,11 @@
 	"capitalize": {
 		"style": {
 			"textTransform": "capitalize"
+		}
+	},
+	"underline": {
+		"style": {
+			"textDecorationLine": "underline"
 		}
 	}
 }

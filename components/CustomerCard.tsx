@@ -1,10 +1,10 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity, TouchableHighlight } from 'react-native'
 import React from 'react'
 import useCustomerOrders from '../hooks/useCustomerOrders';
 import { useTailwind } from 'tailwind-rn/dist';
 import { useNavigation } from '@react-navigation/native';
 import { CustomerScreenNavigationProp } from '../screens/CustomerScreen';
-
+import {Card } from 'react-native-paper';
 
 type Props = {
   userId: string;
@@ -18,10 +18,18 @@ const CustomerCard = ({email, name, userId}: Props) => {
   const navigation = useNavigation<CustomerScreenNavigationProp>()
 
   return (
-    <View>
-      <Text>CustomerCard</Text>
-    </View>
+    <TouchableOpacity >
+      <Card style={tw('p-5  ml-2 mr-2 mb-2 mt-2')}>
+        <View >
+          <View>
+            <Text>{name}</Text>
+            <Text>ID {userId}</Text>
+          </View>
+        </View>
+      </Card>
+    </TouchableOpacity>
   )
 }
+
 
 export default CustomerCard

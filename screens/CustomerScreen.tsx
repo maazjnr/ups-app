@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, Image, ScrollView, TextInput} from 'react-native'
+import { View, Text, StatusBar, Image, ScrollView, TextInput} from 'react-native'
 import {useNavigation, CompositeNavigationProp} from '@react-navigation/native';
 import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 import { TabStackParamList } from '../navigator/TabNavigator';
@@ -23,27 +23,28 @@ const CustomerScreen = () => {
     const [input, setInput] = useState<string>("")
     const {loading, error, data} = useQuery(GET_CUSTOMERS);
 
-
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
   })
   }, [])
   return (
-    <ScrollView style={{backgroundColor: "#59c1cc"}}>
+
+    <ScrollView style={{backgroundColor: "#59c1cc"}}
+    showsVerticalScrollIndicator ={false}>
       <Image 
       source={{uri: "https://links.papareact.com/3jc"}}
       style={tw("w-full h-64")}
       />
+      <StatusBar />
       <TextInput placeholder='Search by Customer'
       value={input} onChangeText={setInput}
       style={tw("bg-white pt-5 pb-5 px-10")}
       />
 
-    {data?.getCustomer.map(({name: ID, value: {email, name}}: CustomerResponse) => (
-      <CustomerCard key={ID} email={email} name={name} userId={ID} />
-      ))}
-
+ {data?.getCustomer.map(({name: ID, value: {email, name} }: CustomerResponse) => (
+  <CustomerCard key={ID} email={email} name={name} userId={ID} />
+  ))}
 
     </ScrollView>
       

@@ -14,6 +14,22 @@
   position: relative
 }
 
+.ml-2 {
+  margin-left: 0.5rem
+}
+
+.mr-2 {
+  margin-right: 0.5rem
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem
+}
+
+.mt-2 {
+  margin-top: 0.5rem
+}
+
 .block {
   display: block
 }
@@ -24,6 +40,10 @@
 
 .flex {
   display: flex
+}
+
+.table {
+  display: table
 }
 
 .hidden {
@@ -47,6 +67,10 @@
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
 }
 
+.p-5 {
+  padding: 1.25rem
+}
+
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem
@@ -66,4 +90,8 @@
 
 .capitalize {
   text-transform: capitalize
+}
+
+.underline {
+  text-decoration-line: underline
 }
